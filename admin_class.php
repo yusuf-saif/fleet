@@ -18,7 +18,7 @@ class Action
 		$this->db->close();
 		ob_end_flush();
 	}
- 
+
 	function login()
 	{
 		extract($_POST);
@@ -105,6 +105,4 @@ class Action
 			}
 			return 1;
 		}
-	}
-
-    ?>
+	}}
