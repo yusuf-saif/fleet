@@ -1,0 +1,65 @@
+*{box-sizing: border-box;}
+body{
+    background-color: rgba(180, 192, 189, 0.801);
+    font-size: smaller;
+    font-weight: bold;
+}
+p{
+    text-align: center;
+    margin-left: 35px;
+    margin-bottom: 35px;
+    padding-bottom: 45px;
+    font-size: xx-large;
+    text-transform: uppercase;
+
+}
+
+form{
+    position: absolute;
+    width: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transform: translate(x,y);
+    padding: 19px;
+}
+label{font-weight: bold; 
+    font-size: 21px;}
+
+input[type=text],input[type=password]{
+    width: 100%; 
+    padding: 9px;
+    margin-bottom: 39px;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid white;
+    caret-color: white;
+    font-size: 15px;
+}
+input[type=text]:invalid,input[type=password]:invalid{
+    background-color: whitesmoke;
+    outline: none;
+    transition-property: width;
+    transition-duration: 2s;
+    transition-timing-function: linear;
+}
+fieldset{
+    padding: 39px;
+}
+legend{
+    font-size: 19px; 
+    text-transform: uppercase; 
+    font-weight: 400;
+}
+
+fieldset{padding: 39px;}
+@media only screen and (max-width:700px){
+    form{width:100%}}
+    input[type=text],input[type=password]{
+        font-size: 15px;
+        margin-bottom: 5px;
+    }
+    label{
+        font-size: 17px;
+    }
+
