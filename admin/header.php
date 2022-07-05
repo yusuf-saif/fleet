@@ -20,15 +20,12 @@ header('location:../index.php');
     <link rel="stylesheet" href="../assets/css/metisMenu.css">
     <link rel="stylesheet" href="../assets/css/owl.carousel.min.css">
     <link rel="stylesheet" href="../assets/css/slicknav.min.css">
-    
     <link rel="stylesheet" href="../assets/css/typography.css">
     <link rel="stylesheet" href="../assets/css/default-css.css">
     <link rel="stylesheet" href="../assets/css/styles.css">
     <link rel="stylesheet" href="../assets/css/responsive.css">
-    
     <script src="../assets/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
-
 <body>
     <div id="preloader">
         <div class="loader"></div>

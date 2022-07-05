@@ -7,8 +7,8 @@ session_start();
     if(isset($login))
     {
         $passw = hash('sha256', $_POST['pass']);
-    //$passw = hash('sha256',$p);
-    //echo $passw;exit;
+    // $passw = hash('sha256',$p);
+    // echo $passw;exit;
     function createSalt()
     {
         return '2123293dsj2hu2nikhiljdsd';
@@ -20,7 +20,7 @@ session_start();
         if($row)
             {   
                 $_SESSION['admin']=$email;
-                header('location:fleet');
+                header('location:admin');
             }
         else
             {

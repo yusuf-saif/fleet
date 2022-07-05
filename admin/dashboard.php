@@ -1,21 +1,21 @@
-<!-- <?php 
-// $q=mysqli_query($conn,"select * from member ");
-// $r=mysqli_num_rows($q);
+ <?php 
+$q=mysqli_query($conn,"select * from member ");
+$r=mysqli_num_rows($q);
 
 
 
-// $q2=mysqli_query($conn,"select * from member where gender='m'");
-// $r2=mysqli_num_rows($q2);
+$q2=mysqli_query($conn,"select * from member where gender='m'");
+$r2=mysqli_num_rows($q2);
 
 
-// $q3=mysqli_query($conn,"select * from member where gender='f'");
-// $r3=mysqli_num_rows($q3);
+$q3=mysqli_query($conn,"select * from member where gender='f'");
+$r3=mysqli_num_rows($q3);
 
 
 
 
-// $q1=mysqli_query($conn,"select * from groups ");
-// $r1=mysqli_num_rows($q1);
+$q1=mysqli_query($conn,"select * from groups ");
+$r1=mysqli_num_rows($q1);
 
 
 
@@ -92,28 +92,28 @@
         <?php 
 
 
-// $i=1;
-// while($row=mysqli_fetch_assoc($q))
-// {
+$i=1;
+while($row=mysqli_fetch_assoc($q))
+{
 
-// echo "<tr>";
-// echo "<td>".$i."</td>";
-// echo "<td>".$row['first_name']."</td>";
-// echo "<td>".$row['last_name']."</td>";
-// echo "<td>".$row['gender']."</td>";
+echo "<tr>";
+echo "<td>".$i."</td>";
+echo "<td>".$row['first_name']."</td>";
+echo "<td>".$row['last_name']."</td>";
+echo "<td>".$row['gender']."</td>";
 
-// $q1=mysqli_query($conn,"select * from groups where group_id='".$row['group_id']."'");
-// $r1=mysqli_fetch_assoc($q1);
+$q1=mysqli_query($conn,"select * from groups where group_id='".$row['group_id']."'");
+$r1=mysqli_fetch_assoc($q1);
 
-// echo "<td>".$r1['group_name']."</td>";
-// echo "<td>".$row['join_date']."</td>";
+echo "<td>".$r1['group_name']."</td>";
+echo "<td>".$row['join_date']."</td>";
 
 ?>
 <?php 
 
-// echo "</tr>";
-// $i++;
-// }
+echo "</tr>";
+$i++;
+}
         ?>
 </table>
 </div>
