@@ -116,7 +116,5 @@
 // }
         ?>
 </table>
-<!--  Author Name: Mayuri K. 
- for any PHP, Codeignitor or Laravel work contact me at mayuri.infospace@gmail.com  -->
-                    </div>
-                     -->
+</div>
+                    
