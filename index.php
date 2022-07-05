@@ -1,152 +1,123 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>FLEET  MANAGEMENT SYSTEM</title>
- 	
-
 <?php
-	session_start();
-  if(!isset($_SESSION['login_id']))
-    header('location:login.php');
- include('./header.php'); 
- // include('./auth.php'); 
- ?>
+session_start();
 
-</head>
+    include('connection.php');
+
+        extract($_POST);
+    if(isset($login))
+    {
+        $passw = hash('sha256', $_POST['pass']);
+    //$passw = hash('sha256',$p);
+    //echo $passw;exit;
+    function createSalt()
+    {
+        return '2123293dsj2hu2nikhiljdsd';
+    }
+    $salt = createSalt();
+    $passw = hash('sha256', $salt . $passw);
+        $que=mysqli_query($conn,"SELECT * FROM admin WHERE user='$email' and pass='$passw'");
+        $row=mysqli_num_rows($que);
+        if($row)
+            {   
+                $_SESSION['admin']=$email;
+                header('location:fleet');
+            }
+        else
+            {
+                $err="<font color='red'>Wrong Email or Password !</font>";
+            }
+    }
+?>
+<html class="no-js" lang="en">
+
+       
 <style>
-	body{
-        background: #EEEEEE;
-  }
-  .modal-dialog.large {
-    width: 80% !important;
-    max-width: unset;
-  }
-  .modal-dialog.mid-large {
-    width: 50% !important;
-    max-width: unset;
-  }
+.footer1 {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #2c71da;
+  color: white;
+  text-align: center;
+}
 </style>
+        <footer>
+            <div class="footer1">
+                <p style="color:white"><marquee behavior="alternate" scrollamount="1">Developed by <b>KSL</b>        |  <b>copyright @ KSL 2022</b></marquee></p>
+            </div>
+        </footer>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>FLEET SYSTEM LOGIN</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="assets/images/icon/favicon.ico">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/css/metisMenu.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/slicknav.min.css">
+    
+    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+    
+    <link rel="stylesheet" href="assets/css/typography.css">
+    <link rel="stylesheet" href="assets/css/default-css.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    
+    <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
 
 <body>
-	<?php include 'topbar.php' ?>
-	<?php include 'navbar.php' ?>
-  <div class="toast" id="alert_toast" role="alert" aria-live="assertive" aria-atomic="true">
-    <div class="toast-body text-white">
+    
+    <div id="preloader">
+        <div class="loader"></div>
     </div>
-  </div>
-  <main id="view-panel" >
-      <?php $page = isset($_GET['page']) ? $_GET['page'] :'home'; ?>
-  	<?php file_exists($page . '.php') ? include $page.'.php' : include 'home.php'; ?>
-  	
-
-  </main>
-
-  <div id="preloader"></div>
-  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
-
-<div class="modal fade" id="confirm_modal" role='dialog'>
-    <div class="modal-dialog modal-md" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-        <h5 class="modal-title">Confirmation</h5>
-      </div>
-      <div class="modal-body">
-        <div id="delete_content"></div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" id='confirm' onclick="">Continue</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-      </div>
+    
+    
+    <div class="login-area">
+        <div class="container">
+            <div class="login-box ptb--100">
+                <form method="post">
+                    <div class="login-form-head">
+                        <h4> Fleet System Login</h4>
+                    </div>
+                    <div class="login-form-body">
+                        <div class="form-gp">
+                            <label for="exampleInputEmail1">Usename</label>
+                            <input type="text" id="exampleInputEmail1" name="email">
+                            <i class="ti-email"></i>
+                            <div class="text-danger"></div>
+                        </div>
+                        <div class="form-gp">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" id="exampleInputPassword1" name="pass">
+                            <i class="ti-lock"></i>
+                            <div class="text-danger"></div>
+                        </div>
+                       
+                        <div class="submit-btn-area">
+                            <button id="form_submit" type="submit"  name="login">Login <i class="ti-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="modal fade" id="uni_modal" role='dialog'>
-    <div class="modal-dialog modal-md" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-        <h5 class="modal-title"></h5>
-      </div>
-      <div class="modal-body">
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" id='submit' onclick="$('#uni_modal form').submit()">Save</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-      </div>
-      </div>
-    </div>
-  </div>
+    
+
+    
+    <script src="assets/js/vendor/jquery.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/metisMenu.min.js"></script>
+    <script src="assets/js/jquery.slimscroll.min.js"></script>
+    <script src="assets/js/jquery.slicknav.min.js"></script>
+    <script src="assets/js/plugins.js"></script>
+    <script src="assets/js/scripts.js"></script>
 </body>
-<script>
-	 window.start_load = function(){
-    $('body').prepend('<di id="preloader2"></di>')
-  }
-  window.end_load = function(){
-    $('#preloader2').fadeOut('fast', function() {
-        $(this).remove();
-      })
-  }
 
-  window.uni_modal = function($title = '' , $url='',$size=""){
-    start_load()
-    $.ajax({
-        url:$url,
-        error:err=>{
-            console.log()
-            alert("An error occured")
-        },
-        success:function(resp){
-            if(resp){
-                $('#uni_modal .modal-title').html($title)
-                $('#uni_modal .modal-body').html(resp)
-                if($size != ''){
-                    $('#uni_modal .modal-dialog').addClass($size)
-                }else{
-                    $('#uni_modal .modal-dialog').removeAttr("class").addClass("modal-dialog modal-md")
-                }
-                $('#uni_modal').modal('show')
-                end_load()
-            }
-        }
-    })
-}
-window._conf = function($msg='',$func='',$params = []){
-     $('#confirm_modal #confirm').attr('onclick',$func+"("+$params.join(',')+")")
-     $('#confirm_modal .modal-body').html($msg)
-     $('#confirm_modal').modal('show')
-  }
-   window.alert_toast= function($msg = 'TEST',$bg = 'success'){
-      $('#alert_toast').removeClass('bg-success')
-      $('#alert_toast').removeClass('bg-danger')
-      $('#alert_toast').removeClass('bg-info')
-      $('#alert_toast').removeClass('bg-warning')
-
-    if($bg == 'success')
-      $('#alert_toast').addClass('bg-success')
-    if($bg == 'danger')
-      $('#alert_toast').addClass('bg-danger')
-    if($bg == 'info')
-      $('#alert_toast').addClass('bg-info')
-    if($bg == 'warning')
-      $('#alert_toast').addClass('bg-warning')
-    $('#alert_toast .toast-body').html($msg)
-    $('#alert_toast').toast({delay:3000}).toast('show');
-  }
-  $(document).ready(function(){
-    $('#preloader').fadeOut('fast', function() {
-        $(this).remove();
-      })
-  })
-  $('.datetimepicker').datetimepicker({
-      format:'Y/m/d H:i',
-      startDate: '+3d'
-  })
-  $('.select2').select2({
-    placeholder:"Please select here",
-    width: "100%"
-  })
-</script>	
 </html>
