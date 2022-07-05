@@ -9,11 +9,13 @@
   background-color: #2c71da;
   color: white;
   text-align: center;
+  font-size: 10px;
+
 }
 </style>
         <footer>
             <div class="footer1">
-                <p style="color:white"> <b>KSL</b></p>
+                <p style="color:white"> <b>version 1.0 Developed by KSL</b></p>
             </div>
         </footer>
         

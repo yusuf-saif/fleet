@@ -41,7 +41,7 @@ header('location:../index.php');
 <div class="sidebar-menu">
     <div class="sidebar-header">
         <div class="logo">
-            <a href="index.php" style="color:white">FLEET MS<b>by KSL</b> </a>
+            <a href="index.php" style="color:white"><b>FLEET MS</b></a>
         </div>
     </div>
     <div class="main-menu">
@@ -49,28 +49,54 @@ header('location:../index.php');
             <nav>
                 <ul class="metismenu" id="menu">
                     <li><a href="index.php"><span class="ti-layout-grid2-alt"></span> Dashboard</a></li>
-                    <li><a href="index.php?page=update_password"><span class="ti-lock"></span> Update Password</a></li>
+                    <!-- <li><a href="index.php?page=update_password"><span class="ti-lock"></span> Update Password</a></li>
     <li><a href="index.php?page=display_group"><span class="ti-id-badge"></span>  Groups</a></li>
-    <li><a href="index.php?page=display_member"><span class="ti-user"></span>  Members</a></li>
+    <li><a href="index.php?page=display_member"><span class="ti-user"></span>  Members</a></li> -->
     
     <li class="pcoded-hasmenu">
 <a href="javascript:void(0)">
 <span class="pcoded-micon"><i class="ti-money"></i></span>
-<span class="pcoded-mtext">Loan</span>
+<span class="pcoded-mtext">Vehicle</span>
 </a>
 <ul class="pcoded-submenu">
 <li class="">
 <a href="index.php?page=display_loan">
-<span class="pcoded-mtext">Loan Request</span>
+<span class="pcoded-mtext">Add Vehichle</span>
 </a>
 </li>
 <li class="">
 <a href="index.php?page=add_payment_history">
-<span class="pcoded-mtext">Loan Repay</span>
+<span class="pcoded-mtext">Vehicles</span>
+</a>
+</li>
+<li class="">
+<a href="index.php?page=add_payment_history">
+<span class="pcoded-mtext">Vehicle assigment</span>
+</a>
+</li>
+<li class="">
+<a href="index.php?page=add_payment_history">
+<span class="pcoded-mtext">Assignment History</span>
 </a>
 </li>
 </ul>
-
+  <li class="pcoded-hasmenu">
+<a href="javascript:void(0)">
+<span class="pcoded-micon"><i class="ti-money"></i></span>
+<span class="pcoded-mtext">Driver</span>
+</a>
+<ul class="pcoded-submenu">
+<li class="">
+<a href="index.php?page=display_loan">
+<span class="pcoded-mtext">Add Driver</span>
+</a>
+</li>
+<li class="">
+<a href="index.php?page=add_payment_history">
+<span class="pcoded-mtext">Drivers</span>
+</a>
+</li>
+</ul>
 </li class="divider">
 <li class="pcoded-hasmenu">
 <a href="javascript:void(0)">
@@ -80,17 +106,17 @@ header('location:../index.php');
 <ul class="pcoded-submenu">
 <li class="">
 <a href="index.php?page=report_display_loan">
-<span class="pcoded-mtext">Loan</span>
+<span class="pcoded-mtext">Drivers report</span>
 </a>
 </li>
 <li class="">
 <a href="index.php?page=report_member">
-<span class="pcoded-mtext">Member List</span>
+<span class="pcoded-mtext">Vehicles Report</span>
 </a>
 </li>
 <li class="">
 <a href="index.php?page=display_payment_history">
-<span class="pcoded-mtext">Payment History</span>
+<span class="pcoded-mtext">Assignment Report</span>
 </a>
 </li>
 </ul>
