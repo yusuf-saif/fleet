@@ -20,11 +20,11 @@
 			
 		  }
 		  
-		  else
-		  {
-		  include('dashboard.php');
+		//   else
+		//   {
+		//   include('dashboard.php');
 		 
-		 }
+		//  }
 		  ?>
 				</div>
 			</div>
