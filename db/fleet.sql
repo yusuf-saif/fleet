@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 30, 2022 at 03:44 PM
+-- Generation Time: Jul 07, 2022 at 12:45 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -24,15 +24,38 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `admin_id` int(11) NOT NULL,
+  `user` varchar(50) NOT NULL,
+  `pass` varchar(150) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`admin_id`, `user`, `pass`) VALUES
+(1, 'mayuri.infospace@gmail.com', 'aa7f019c326413d5b8bcad4314228bcd33ef557f5d81c7cc977f7728156f4357'),
+(2, 'admin', 'aa7f019c326413d5b8bcad4314228bcd33ef557f5d81c7cc977f7728156f4357');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `driver`
 --
 
 CREATE TABLE `driver` (
-  `id` int(11) NOT NULL,
-  `Driver_name` varchar(100) NOT NULL,
-  `staff_id` varchar(30) NOT NULL,
-  `driver_licence_no` varchar(30) NOT NULL,
-  `age` smallint(100) NOT NULL
+  `driver_id` int(11) NOT NULL,
+  `driver_name` varchar(150) NOT NULL,
+  `staff_id` varchar(50) NOT NULL,
+  `license_id` varchar(50) NOT NULL,
+  `phone` tinyint(15) NOT NULL,
+  `gender` enum('m','f') CHARACTER SET latin1 DEFAULT NULL,
+  `status` enum('active','incactive') CHARACTER SET latin1 DEFAULT NULL,
+  `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -78,10 +101,16 @@ CREATE TABLE `vehicle` (
 --
 
 --
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`admin_id`);
+
+--
 -- Indexes for table `driver`
 --
 ALTER TABLE `driver`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`driver_id`);
 
 --
 -- Indexes for table `users`
@@ -100,10 +129,16 @@ ALTER TABLE `vehicle`
 --
 
 --
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `driver`
 --
 ALTER TABLE `driver`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `driver_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`
