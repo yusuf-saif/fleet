@@ -1,6 +1,7 @@
 <?php include 'dbConfig.php'; ?>
+<?php include 'link.php'; ?>
 <?php 
-$q=mysqli_query($conn,"SELECT * FROM driver");
+$q=mysqli_query($con,"SELECT * FROM driver");
 $rr=mysqli_num_rows($q);
 if(!$rr)
 {
@@ -40,21 +41,19 @@ else
 	<tr class="active">
 		<th>S/No</th>
 		<th>Driver Name</th>
-		<th>Group Leader</th>
-		<th>Reg No</th>		
-		<th>Meeting Day</th>
-		<th>Total Member</th>
+		<th>Staff Id</th>
+		<th>License No</th>		
+		<th>Phone Number</th>
+		<th>Gender</th>
 		<th>Date of Creation</th>
-		<th>Address</th>
-
-		
+	
 		<?php // if($_SESSION['login_type'] == 1): ?>	
 
 		<th>Delete</th>
 		
 	</tr>
 		<?php 
-$q=mysqli_query($conn,"SELECT * FROM groups");
+$q=mysqli_query($conn,"SELECT * FROM driver");
 $rr=mysqli_num_rows($q);
 if($rr)
 {
@@ -63,15 +62,15 @@ $i=1;
 while($row=mysqli_fetch_assoc($q))
 {
 
-// echo "<tr>";
-// echo "<td>".$i."</td>";
-// echo "<td>".$row['group_name']."</td>";
-// echo "<td>".$row['group_leader']."</td>";
-// echo "<td>".$row['registration_number']."</td>";
-// echo "<td>".$row['meeting_day']."</td>";
-// echo "<td>".$row['group_total_members']."</td>";
-// echo "<td>".$row['group_creation_date']."</td>";
-//  echo "<td>".$row['address']."</td>";
+echo "<tr>";
+echo "<td>".$i."</td>";
+echo "<td>".$row['driver_name']."</td>";
+echo "<td>".$row['staff_id']."</td>";
+echo "<td>".$row['license_id']."</td>";
+echo "<td>".$row['phone']."</td>";
+echo "<td>".$row['gender']."</td>";
+echo "<td>".$row['status']."</td>";
+ echo "<td>".$row['date']."</td>";
 ?>
 
 <td><a href="javascript:DeleteGrop('<?php echo $row['group_id']; ?>')" style='color:Red'><span class='fa fa-trash'></span></a></td>
