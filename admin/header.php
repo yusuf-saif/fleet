@@ -46,9 +46,7 @@ header('location:../index.php');
             <nav>
                 <ul class="metismenu" id="menu">
                     <li><a href="index.php"><span class="ti-layout-grid2-alt"></span> Dashboard</a></li>
-                    <!-- <li><a href="index.php?page=update_password"><span class="ti-lock"></span> Update Password</a></li>
-    <li><a href="index.php?page=display_group"><span class="ti-id-badge"></span>  Groups</a></li>
-    <li><a href="index.php?page=display_member"><span class="ti-user"></span>  Members</a></li> -->
+                   
     
     <li class="pcoded-hasmenu">
 <a href="javascript:void(0)">
@@ -57,22 +55,22 @@ header('location:../index.php');
 </a>
 <ul class="pcoded-submenu">
 <li class="">
-<a href="index.php?page=display_loan">
+<a href="index.php?page=add_vehicle">
 <span class="pcoded-mtext">Add Vehichle</span>
 </a>
 </li>
 <li class="">
-<a href="index.php?page=add_payment_history">
+<a href="index.php?page=display_vehicle">
 <span class="pcoded-mtext">Vehicles</span>
 </a>
 </li>
 <li class="">
-<a href="index.php?page=add_payment_history">
+<a href="index.php?page=vehicle_assignment">
 <span class="pcoded-mtext">Vehicle assigment</span>
 </a>
 </li>
 <li class="">
-<a href="index.php?page=add_payment_history">
+<a href="index.php?page=assignment_history">
 <span class="pcoded-mtext">Assignment History</span>
 </a>
 </li>
@@ -84,12 +82,12 @@ header('location:../index.php');
 </a>
 <ul class="pcoded-submenu">
 <li class="">
-<a href="index.php?page=display_loan">
+<a href="index.php?page=add_driver">
 <span class="pcoded-mtext">Add Driver</span>
 </a>
 </li>
 <li class="">
-<a href="index.php?page=add_payment_history">
+<a href="index.php?page=display_driver">
 <span class="pcoded-mtext">Drivers</span>
 </a>
 </li>
@@ -167,4 +165,11 @@ header('location:../index.php');
                 </div>
             </div>
             
-   
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script>
+            $(window).on("load", function()
+                {
+                    $(".loader").fadeOut("slow");
+                }
+            );
+	</script>

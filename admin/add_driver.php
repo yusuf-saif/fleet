@@ -1,6 +1,28 @@
-<?php
+<?php 
+extract($_POST);
+if(isset($save))
+{
+
+$sql=mysqli_query($conn,"SELECT * FROM driver WHERE group_name='$g_name' or registration_number='$reg_no'");
+$r=mysqli_num_rows($sql);
+		if($r!=true)
+		{
+		mysqli_query($conn,"INSERT INTO driver VALUES('',',now())");
+		
+$err="<font color='blue'>Congrates new Driver added successfully</font>";
+		}
+		
+		else
+		{
+
+	$err="<font color='red'>This Driver name or Registration number already exists choose diff Driver name</font>";
+		
+	
+	}
+}
 
 ?>
+<link rel="stylesheet" href="../admin/add_driver.css">
   <div class="container">
     <div class="title"><b>Add driver</b></div>
     <div class="content">

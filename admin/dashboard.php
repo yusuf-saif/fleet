@@ -1,21 +1,21 @@
  <?php 
-$q=mysqli_query($conn,"select * from member ");
-$r=mysqli_num_rows($q);
+// $q=mysqli_query($conn,"select * from member ");
+// $r=mysqli_num_rows($q);
 
 
 
-$q2=mysqli_query($conn,"select * from member where gender='m'");
-$r2=mysqli_num_rows($q2);
+// $q2=mysqli_query($conn,"select * from member where gender='m'");
+// $r2=mysqli_num_rows($q2);
 
 
-$q3=mysqli_query($conn,"select * from member where gender='f'");
-$r3=mysqli_num_rows($q3);
+// $q3=mysqli_query($conn,"select * from member where gender='f'");
+// $r3=mysqli_num_rows($q3);
 
 
 
 
-$q1=mysqli_query($conn,"select * from groups ");
-$r1=mysqli_num_rows($q1);
+// $q1=mysqli_query($conn,"select * from groups ");
+// $r1=mysqli_num_rows($q1);
 
 
 
