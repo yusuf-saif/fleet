@@ -1,6 +1,30 @@
-  <link rel="stylesheet" href="../admin/add_vehicle.css">
+<?php 
+extract($_POST);
+if(isset($save))
+{
+
+$sql=mysqli_query($conn,"SELECT * FROM vehicle WHERE d_name='$d_name' or staff_id='$staff_id");
+$r=mysqli_num_rows($sql);
+		if($r!=true)
+		{
+		mysqli_query($conn,"INSERT INTO driver VALUES('',',now())");
+		
+$err="<font color='blue'>Congrates new Driver added successfully</font>";
+		}
+		
+		else
+		{
+
+	$err="<font color='red'>This Driver name or Registration number already exists choose diff Driver name</font>";
+		
+	
+	}
+}
+
+?>
+<link rel="stylesheet" href="../admin/add_vehicle.css">
   <div class="container">
-    <div class="title"><b>Add driver</b></div>
+    <div class="title"><b>Add vehicle</b></div>
     <div class="content">
       <form action="#">
         <div class="user-details">
