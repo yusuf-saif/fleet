@@ -29,7 +29,7 @@ $err="<font color='blue'>Congrates new Driver added successfully</font>";
       <form action="#">
         <div class="user-details">
           <div class="input-box">
-            <span class="details">Full Name</span>
+            <span class="details">Vehicle</span>
             <input type="text" placeholder="Enter your name" required>
           </div>
           <div class="input-box">
