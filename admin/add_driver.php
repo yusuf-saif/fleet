@@ -1,24 +1,46 @@
 <?php 
+// extract($_POST);
+// if(isset($save))
+// {
+
+// $sql=mysqli_query($conn,"SELECT * FROM driver WHERE d_name='$d_name' or staff_id='$staff_id");
+// $r=mysqli_num_rows($sql);
+// 		if($r!=true)
+// 		{
+// 		mysqli_query($conn,"INSERT INTO driver VALUES('',',now())");
+		
+// $err="<font color='blue'>Congrates new Driver added successfully</font>";
+// 		}
+		
+// 		else
+// 		{
+
+// 	$err="<font color='red'>This Driver name or Registration number already exists choose diff Driver name</font>";
+		
+	
+// 	}
+include_once '../connection.php';
 extract($_POST);
 if(isset($save))
 {
 
-$sql=mysqli_query($conn,"SELECT * FROM driver WHERE d_name='$d_name' or staff_id='$staff_id");
+$sql=mysqli_query($conn,"SELECT * FROM driver	 WHERE d_name='$d_name', staff_id=");
 $r=mysqli_num_rows($sql);
 		if($r!=true)
 		{
-		mysqli_query($conn,"INSERT INTO driver VALUES('',',now())");
+		mysqli_query($conn,"INSERT INTO sav VALUES('','$member_id','$amount',now())");
 		
-$err="<font color='blue'>Congrates new Driver added successfully</font>";
+$err="<font color='blue'>Congrates new Savings added successfully</font>";
 		}
 		
 		else
 		{
 
-	$err="<font color='red'>This Driver name or Registration number already exists choose diff Driver name</font>";
+	$err="<font color='red'>This Savings Member already exists choose diffrent Member</font>";
 		
 	
 	}
+}
 }
 
 ?>
