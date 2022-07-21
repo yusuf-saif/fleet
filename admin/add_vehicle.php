@@ -62,7 +62,7 @@ $err="<font color='blue'>Congrates new Driver added successfully</font>";
           </div>
         </div>
         <div class="button">
-          <input type="submit" value="reigster vehicle">
+          <input type="submit" value="submit">
         </div>
       </form>
     </div>

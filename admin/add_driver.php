@@ -1,4 +1,5 @@
 <?php 
+<<<<<<< HEAD
 // extract($_POST);
 // if(isset($save))
 // {
@@ -29,6 +30,18 @@ $r=mysqli_num_rows($sql);
 		if($r!=true)
 		{
 		mysqli_query($conn,"INSERT INTO sav VALUES('','$member_id','$amount',now())");
+=======
+include'dbConfig.php';
+// extract($_POST);
+// if(isset($save))
+// {
+  if(isset($_POST['submit'])) {
+$sql=mysqli_query($db,"SELECT * FROM driver WHERE d_name='$d_name' or staff_id='$staff_id");
+$r=mysqli_num_rows($sql);
+		if($r!=true)
+		{
+		mysqli_query($db,"INSERT INTO driver VALUES('','d_name','staff_id','license_id','phone', now())");
+>>>>>>> 5d6f119e5d2c99ae966760c030ef3cdb4fcbe191
 		
 $err="<font color='blue'>Congrates new Savings added successfully</font>";
 		}
@@ -48,7 +61,7 @@ $err="<font color='blue'>Congrates new Savings added successfully</font>";
   <div class="container">
     <div class="title"><b>Add driver</b></div>
     <div class="content">
-      <form action="#">
+      <form method="POST" novalidate>
         <div class="user-details">
           <div class="input-box">
             <span class="details">Driver Full Name</span>
@@ -67,23 +80,23 @@ $err="<font color='blue'>Congrates new Savings added successfully</font>";
           </div>
           <div class="input-box">
             <span class="details">Phone Number</span>
-            <input type="tel" name="pn" placeholder="Enter your number" required>
+            <input type="tel" name="phone" placeholder="Enter your number" required>
           </div>
-          <div class="input-box">
+          <!-- <div class="input-box">
             <span class="details">Driver's status</span>
-            <!-- <label for="cars">Driver status:</label> -->
+            <!-- <label for="cars">Driver status:</label> 
             <select name="ds" id="ds">
               <option value="av">Active</option>
               <option value="inv">inactive</option>
             </select>
-            <!-- <input type="text" name="ds" placeholder="enter your status" required> -->
+           <input type="text" name="ds" placeholder="enter your status" required> 
           </div>
         </div>
-        <!-- <div class="input-box">
+         <div class="input-box">
           <span class="details">Gender</span>
           Male <input type="radio" name="gen" value="m" required/>
 	        Female <input type="radio" name="gen" value="f" />
-        </div> -->
+        </div> 
          <div class="gender-details"> 
           <input type="radio" name="gender" id="dot-1">
           <input type="radio" name="gender" id="dot-2">
@@ -103,9 +116,9 @@ $err="<font color='blue'>Congrates new Savings added successfully</font>";
             <span class="gender">others</span>
             </label>
           </div> 
-        </div> 
+        </div>  -->
         <div class="button">
-          <input type="submit" value="Add driver">
+          <input type="submit" value="submit">
         </div>
       </form>
     </div>
